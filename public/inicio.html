@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.scss">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script  type="text/javascript" src="../js/chart.min.js" charset="utf-8"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Seleccion de rutas</title>
+<style>
+  .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: 320px;
+}
+          </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-dark" style="background-color: #424682;">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../src/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+              Calculo de Beneficio Esperado
+            </a>
+          </div>
+      </nav>
+    <div class="contenedor ">
+        <div>
+            <div class="d-flex justify-content-center">
+                <img src="../src/bus.jpg" class="rounded-circle" width="250" height="236"> 
+            </div>
+            <div class="titulo_en center"><h1>Empresa de Transporte</h1></div>
+            <hr>
+        </div>
+        <div class="form_float" position="left" >
+            <form action="graficas.php" method="post">
+                <div class="items-form">
+                    <label class="col-5" for="ruta">Seleccionar Ruta</label>
+                    <!--<select id="myselection">
+                        <option>Select Option</option>
+                        <option value="One">Tegucigalpa – Comayagua</option>
+                        <option value="Two">Tegucigalpa – San Pedro Sula</option>
+                        <option value="Three">Tegucigalpa – Copán</option>
+                    </select> -->
+                  
+                     <select id="ruta" class="col-5 " > <!--name="ruta" -->
+                        <option value="/src/t-c.png">Tegucigalpa – Copán</option>
+                        <option value="/src/t-s.png">Tegucigalpa – San Pedro Sula</option>
+                        <option value="/src/t-l.png">Tegucigalpa – La Ceiba</option>
+                        <option value="/src/t-co.png">Tegucigalpa – Comayagua</option>
+                        
+                    </select>
+                    
+                   
+                    <!-- <select id="my_select_box">
+                        <option value="" selected></option>
+                        <option value="https://www.elcarrocolombiano.com/wp-content/uploads/2019/06/20190628-DAMON-MOTORS-MOTO-EVITA-ACCIDENTES-01.jpg">something</option>
+                        <option value="https://cdn.icon-icons.com/icons2/1367/PNG/512/32officeicons-30_89730.png">something else</option>
+                        </select> -->
+                     <br>  
+                <div class="items-form">
+                    <label class="col-5" for="bus">Capacidad Bus:</label>
+                    <select class="col-5 " name="bus" id="bus">
+                        <option value="40">40 pasajeros</option>
+                        <option value="50">50 pasajeros</option>
+                        <option value="60">60 pasajeros</option>
+                    </select>
+                </div><br>
+                <div class="items-form">
+                    <label for="">Ingrese Cantidad de Pasajeros</label>
+                    <hr>
+                </div>
+                <div class="items-form">
+                    <label for="primeraclase" class="col-5">Primera clase</label>
+                    <input id="primeraclase" type="number" class="col-5" min="0" max="10" value="0">
+                </div>
+                <div class="items-form">
+                    <label for="normal" class="col-5">Normal</label>
+                    <input id="normal" type="number" class="col-5" min="0" value="0">
+                </div>
+                <div class="items-form">
+                    <label for="niños" class="col-5">Niños</label>
+                    <input id="niños" type="number" class="col-5" min="0" value="0">
+                </div>
+                <div class="items-form">
+                    <label for="terceraedad" class="col-5">Tercera Edad</label>
+                    <input id="terceraedad" type="number" class="col-5" min="0" value="0">
+                </div>
+                <div class="col-5">
+                    <!--<input class="btn btn_en btn-primary btn-primary-spacing"  type="button" value="Edit Tarifas" onclick="precios();">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tarifas</button> -->
+                    <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> Editar Tarifas
+                    </button>
+                </div>
+            </form>
+            
+            </div>
+            
+        </div>
+        <div class="button-form row";>
+           
+            <div class="col-5">
+                <input class="btn btn_en btn-primary btn-primary-spacing" margin-left="200px" type="button" value="Cancelar" onclick="deleteItems();">
+                
+            </div>
+            <div class="col-5">
+                <input class="btn btn_en btn-primary" type="button" margin-left="200px" value="Calcular" onclick="calcular();">
+            </div>
+        </div>
+    <div>  
+             <!--Modal-->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body ">
+                        <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                        <div class="px-4 py-5">
+                            <h5 class="text-uppercase">Tarifas</h5>
+                            <h4 class="mt-5 theme-color mb-5">Tegucigalpa - Copan</h4> <span class="theme-color">Costos Fijos</span>
+                            <div class="mb-3">
+                                <hr class="new1">
+                            </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Distancia:</span> <span class="text-muted">320km</span> </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Combustible:</span> <span class="text-muted">9000</span> </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Boletos:</span> <span class="text-muted">Normal: 700</span><span class="text-muted">Primera Clase: 1000</span> </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> </span> <span class="text-muted">Niños: 300</span><span class="text-muted">3ra Edad: 300</span> </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Peajes:</span> <span class="text-muted">200</span> </div>
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Alimentacion:</span> <span class="text-muted">50</span> </div>
+                           
+                            <div class="text-center mt-5"> <button class="btn btn-primary">Editar</button> </div>
+                            <img id="my_changing_image" src="/src/t-co.png" width="372" height="391" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal-->
+        <section class="">
+            <!-- Footer -->
+            <footer class="text-center text-white" style="background-color: #424682;">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                  <p class="d-flex justify-content-center align-items-center">
+                    
+                    
+                    <!--<span class="me-3">Grupo 6</span>
+                        <button type="button" class="btn btn-outline-light btn-rounded">
+                      Sign up! -->
+                    </button>
+                  </p>
+                </section>
+                <!-- Section: CTA -->
+              </div>
+              <!-- Grid container -->
+          
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: #424682;">
+                © 2021        UNAH        
+                <a class="text-white" href="">IS910</a>
+            </div>
+            <span class="me-3">Grupo 6</span>
+          </div>
+            </section>
+            
+            </footer>
+            <!-- Footer -->
+          </section>
+    </div>
+    <!-- Sweet alert scripts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Sweet Alert scripts -->
+
+    <script src="../js/ruta_inicio.js"></script>
+    <script src="../js/script.js"></script>
+     <script> 
+     function deleteItems() {
+        localStorage.clear();
+        window.location.reload();
+      }
+      </script>
+<script>
+$(document).ready(function(){
+    $('#ruta').on('change', function(){
+    	var demovalue = $(this).val(); 
+        $("div.myDiv").hide();
+        $("#show"+demovalue).show();
+    });
+});
+</script>
+<script>
+$('#ruta').change(function(){
+	$('#my_changing_image img').attr('src', $('#ruta').val());
+});
+</script>
+</body>
+</html>
+
+<!-- <div id="showOne" class="myDiv">
+    <img src="../src/t-c.png" alt="t-c"/><span>Tegucigalpa - Comayagua</span>
+</div>
+<div id="showTwo" class="myDiv">
+    <img src="../src/t-s.png" alt="t-s"/><span>Tegucigalpa - San Pedro Sula</span>
+</div>
+<div id="showThree" class="myDiv">
+    <img src="../src/t-co.png" alt="t-co"/><span>Tegucigalpa - Copan</span>
+</div> -->

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- Css propios -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <title>Beneficio esperado</title>
+</head>
+<body>
+     <nav class="navbar navbar-dark" style="background-color: #424682;">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../src/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+              Calculo de Beneficio Esperado
+            </a>
+          </div>
+      </nav>
+    <Div class="contenedor ">
+        <div>
+                <div class="d-flex justify-content-center">
+                    <img src="../src/bus.jpg" class="rounded-circle" width="250" height="236"> 
+                </div>
+                <div class="titulo_en center"><h1>Empresa de Transporte</h1></div>
+                <hr>
+        </div>
+        <div class="form_float center">
+            <form action="">
+                <div class="items-form">
+                    <label class="col-5" for="ruta">Ruta seleccionada</label>
+                    <input type="text" id="ruta" disabled>
+                </div>
+                <div class="items-form">
+                    <label for="">Ingreso</label>
+                    <hr>
+                </div>
+                <div class="items-form">
+                    <label for="ingresos" class="col-5">Ingresos</label>
+                    <input id="ingresos" type="text" class="col-5" disabled>
+                </div>
+                <div class="items-form">
+                    <label for="">Gastos invertidos</label>
+                    <hr>
+                </div>
+                <div class="items-form">
+                    <label for="gasto_variable" class="col-5">Gasto variable</label>
+                    <input id="gasto_variable" type="text" class="col-5" disabled>
+                </div>
+                <div class="items-form">
+                    <label for="gasto_fijo" class="col-5">Gasto Fijo</label>
+                    <input id="gasto_fijo" type="text" class="col-5" disabled>
+                </div>
+                <div class="items-form">
+                    <label for="">Beneficio esperado</label>
+                    <hr>
+                </div>
+                <div class="items-form">
+                    <label for="beneficio" class="col-5">Beneficio Esperado</label>
+                    <input id="beneficio" type="text" class="col-5" disabled>
+                </div>
+                <div class="button-form_be row">
+                    <div class="col-6">
+                        <a href="./inicio.html">
+                            <input class="btn btn_en btn-primary" type="button" value="Nuevo";>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="./graficas.html">
+                            <input class="btn btn_en btn-primary" type="button" value="Graficas">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <section class="">
+            <!-- Footer -->
+            <footer class="text-center text-white" style="background-color: #424682;">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                  <p class="d-flex justify-content-center align-items-center">
+                    
+                    
+                    <!--<span class="me-3">Grupo 6</span>
+                        <button type="button" class="btn btn-outline-light btn-rounded">
+                      Sign up! -->
+                    </button>
+                  </p>
+                </section>
+                <!-- Section: CTA -->
+              </div>
+              <!-- Grid container -->
+          
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: #424682;">
+                © 2021        UNAH        
+                <a class="text-white" href="">IS910</a>
+            </div>
+            <span class="me-3">Grupo 6</span>
+          </div>
+            </section>
+            
+            </footer>
+            <!-- Footer -->
+          </section>
+    </div>
+    <script src="../js/ruta_calculo.js"></script>
+    
+</body>
+</html>

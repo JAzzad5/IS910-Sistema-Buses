@@ -1,0 +1,342 @@
+body{
+    background-color: rgba(229, 229, 229, 1);
+    background-image: url(../src/bckg.png);
+}
+
+.contenedor{
+    position: relative;
+    width: 80vw;
+    min-width: 500px;
+    min-height: 650px;
+    left: 10vw;
+    top: 5vh;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 4px 8px 4px rgba(0,0,0,0.1);
+}
+
+.center{
+    text-align: center;
+}
+#contenedor_pag_princ{
+    min-height: 550px !important;
+}
+#contenedor_sim_finan{
+    min-height: 550px !important;
+}
+
+.titulo_pr{
+    padding-top: 15vh;
+}
+
+.bienvenida_pr{
+    padding: 5vh 10vw;
+}
+
+.btn_pr{
+    width: 15vw;
+    height: 80px;
+    margin: 2vw;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+
+.titulo_en{
+    padding: 1rem 0rem;
+}
+
+.titulo_en h1{
+    font-size: 28px;
+}
+
+.btn_en{
+    width: 6rem;
+    margin-left: 2vw;
+    border-radius: 30px;
+}
+
+hr{
+    color: #0d6efd;
+}
+
+.form_float{
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+    min-width: 300px;
+    min-height: 450px;
+    left: 15vw;
+    right: 15vw;
+    margin-top: 30px;
+    border: 1px solid #0d6efd;
+    border-radius: 30px;
+    background-color: #ddd6ff;
+}
+
+.items-form{
+    padding-top: 15px;
+    align-items: center;
+}
+
+.items-form hr{
+    margin: 0px 20px;
+}
+
+.items-form input, select{
+    border-radius: 5px;
+    height: 2rem;
+    border: 1px solid #0d6efd;
+}
+
+.button-form{
+    padding-top: 10vh;
+}
+
+.button-form_be{
+    padding-top: 5vh;
+}
+
+.button-form input{
+    margin-left: 30px;
+}
+
+.btn-primary-spacing 
+{
+margin-right: 3px;
+margin-bottom: 3px !important;
+}
+
+.button-form_sf{
+    padding-top: 10vh;
+}
+
+
+.form_float_prest label{
+    width: 10vw !important;
+}
+
+.form_float_prest input{
+    width: 12vw !important;
+}
+
+.form_float_prest select{
+    width: 5vw !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+.myDiv{
+	display:none;
+    text-align:center;
+}  
+.myDiv img{
+  margin: -1px auto;
+}
+.myDiv span{
+	text-align: center;
+    background: #ffdede;
+    padding: 6px 10px;
+    display: block;
+    width: 100px;
+    border: 1px solid #d47c7c;
+    margin: 8px auto;
+}
+#showOne{
+	color:red;
+    border:1px solid red;
+    padding:10px;
+}
+#showTwo{
+	color:green;
+    border:1px solid green;
+    padding:10px;
+}
+#showThree{
+	color:blue;
+    border:1px solid blue;
+    padding:10px;
+}
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  position: relative;
+  width: 36px;
+  font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  top: 3px;
+  line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  top: -10px;
+}
+
+@media (min-width: 576px) {
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: #616161 !important;
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+.modal-body {
+  background-color: #fff;
+  border-color: #fff
+}
+
+.close {
+  color: #000;
+  cursor: pointer
+}
+
+.close:hover {
+  color: #000
+}
+
+.theme-color {
+  color: #004cb9
+}
+
+hr.new1 {
+  border-top: 2px dashed #fff;
+  margin: 0.4rem 0
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #004cb9;
+  border-color: #004cb9;
+  padding: 12px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 1px;
+  font-size: 17px
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #004cb9;
+  border-color: #004cb9;
+  padding: 12px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 1px;
+  font-size: 17px
+}

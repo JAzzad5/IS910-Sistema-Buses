@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- Css propios -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    
+    <!--Graficas  -->
+    <script type="text/javascript" src="../js/datos_grafica.js" charset="utf-8"></script>
+    <script  type="text/javascript" src="../js/chart.min.js" charset="utf-8"></script>
+
+    <title>Beneficio total esperado</title>
+</head>
+<body>
+  <nav class="navbar navbar-dark" style="background-color: #424682;">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../src/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          Calculo de Beneficio Esperado
+        </a>
+      </div>
+  </nav>
+    <Div class="contenedor ">
+        <div>
+            <div>
+                <div class="d-flex justify-content-center">
+                    <img src="../src/bus.jpg" class="rounded-circle" width="250" height="236"> 
+                </div>
+                <div class="titulo_en center"><h1>Empresa de Transporte</h1></div>
+                <hr>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="center row">
+              <div class="form_float center">
+                <!--chart.js-->
+                <canvas id="myChart" width="400" height="210"></canvas>
+                  <script>
+                  var nombreRuta =" ";
+                  var ingresosTotal=0;
+                  var gastoVariableTotal=0;
+                  var gastoFijoTotal=0;
+                  var beneficioEsperadoTotal=0;
+
+                    if (localStorage.getItem("calculos")) {
+                        let   calculos= JSON.parse(localStorage.getItem("calculos"));
+                        console.log(calculos.length);
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          nombreRuta += calculos[i].nombreRuta;
+                          console.log(ingresosTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          ingresosTotal+= calculos[i].ingresos;
+                          console.log(ingresosTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          gastoVariableTotal+= calculos[i].gastoVariable;
+                          console.log(gastoVariableTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          gastoFijoTotal+= calculos[i].gastoFijo;
+                          console.log(gastoFijoTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          beneficioEsperadoTotal+= calculos[i].beneficioEsperado;
+                          console.log(beneficioEsperadoTotal);
+                        }
+                    }else{
+                      console.log("Error no reconoce el objeto calculos");
+                    }
+
+                  var ctx = document.getElementById('myChart').getContext('2d');
+                  var myChart = new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                          labels: ['Ingresos', 'Gastos Variables', 'Gastos Fijos', 'Beneficio Esperado'],
+                          datasets: [{
+                              label: nombreRuta,
+                              data: [ingresosTotal, gastoVariableTotal, gastoFijoTotal, beneficioEsperadoTotal],
+                              backgroundColor: [
+                                  'rgb(100, 103, 255)',
+                                  'rgb(60, 179, 113)',
+                                  'rgb(255, 165, 0)',
+                                  'rgb(255, 0, 0)'
+                              ],
+                              borderColor: [
+                                  'rgb(100, 102, 260)',
+                                  'rgb(60, 178, 120)',
+                                  'rgb(255, 164, 6)',
+                                  'rgb(255, -1, 6)'
+                              ],
+                              borderWidth: 3
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              },
+                          },
+                          plugins: {
+                                    legend: {
+                                      title: {
+                                        display: true,
+                                        text: 'Beneficio Esperado',
+                                      }
+                                    }
+                                  }
+                      }
+                  });
+              </script>
+              <div class="button-form row";>
+                <div class="col-6">
+                 
+                    <input class="btn btn_en btn-primary" type="button" value="Nuevo"onclick="nuevo()";>
+               
+               
+            </div>
+            </div>
+            
+          
+          </div>
+                
+
+        <section class="">
+          <!-- Footer -->
+          <footer class="text-center text-white" style="background-color: #424682;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+              <!-- Section: CTA -->
+              <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                  
+                  
+                  <!--<span class="me-3">Grupo 6</span>
+                      <button type="button" class="btn btn-outline-light btn-rounded">
+                    Sign up! -->
+                  </button>
+                </p>
+              </section>
+              <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #424682;">
+              © 2021        UNAH        
+              <a class="text-white" href="">IS910</a>
+          </div>
+          <span class="me-3">Grupo 6</span>
+        </div>
+          </section>
+          
+          </footer>
+          <!-- Footer -->
+        </section>
+    </div>
+    <script> 
+    function nuevo() {
+      deleteItems();
+      window.location.replace ("./inicio.html");
+        
+      }
+      function deleteItems() {
+        
+         localStorage.clear();
+         //window.location.reload();
+         
+       }
+       
+       </script>
+</body>
+</html>
